@@ -115,10 +115,10 @@ h1 span { color: var(--blue); font-size: .68em; white-space: nowrap; }
 .node.terminal-reject > circle:first-child { fill: var(--reject-fill); stroke: var(--reject); stroke-width: 2.5; }
 .node.terminal-accept text { fill: #086437; }
 .node.terminal-reject text { fill: #9c251d; }
-.node.aux > circle:first-child { fill: #68727b; stroke: #68727b; }
+.node.terminal-aux > circle:first-child { fill: #e1e5e8; stroke: #68727b; stroke-width: 2.2; }
 .node.unused > circle:first-child { stroke-dasharray: 3 2; fill: #eeeae3; }
 .node text { text-anchor: middle; font: 800 12px 'Courier New', monospace; fill: #202a33; pointer-events: none; }
-.node.aux text { fill: #fff; }
+.node.terminal-aux text { fill: #4e5963; }
 .path-marker { stroke: #fff; stroke-width: 1.7; vector-effect: non-scaling-stroke; }
 
 .trace-list { display: grid; gap: 6px; margin-top: 13px; }

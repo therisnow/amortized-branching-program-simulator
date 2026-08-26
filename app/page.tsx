@@ -34,6 +34,7 @@ function nodeRadius(node: ProgramNode) {
 }
 
 function nodeSemanticClass(node: ProgramNode) {
+  if (node.stage === "aux") return "terminal-aux";
   if (node.stage !== "p2" || node.level !== 0) return "";
   return node.fn === 1 ? "terminal-accept" : "terminal-reject";
 }
@@ -91,8 +92,8 @@ export default function Home() {
         <div>
           <h1>Amortized Branching Program Simulator <span>(N=2)</span></h1>
           <div className="author-info">
-            <span>Interactive visualization inspired by Aaron Potechin, <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2017.4" target="_blank" rel="noreferrer"><em>A Note on Amortized Branching Program Complexity</em> (2017)</a>.</span>
-            <span className="author-links"><a href="https://github.com/therisnow/potechin-bp-simulator" target="_blank" rel="noreferrer">GitHub Repository</a><i>·</i><a href="mailto:daiy0928@cs.msu.ru">Email</a><b>daiy0928@cs.msu.ru</b></span>
+            <span>Interactive visualization of Potechin’s construction for amortized branching programs, following <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2017.4" target="_blank" rel="noreferrer"><em>A Note on Amortized Branching Program Complexity</em> (2017)</a>.</span>
+            <span className="author-links"><b>Source :</b><a href="https://github.com/therisnow/potechin-bp-simulator" target="_blank" rel="noreferrer">GitHub Repository</a><i>·</i><b>Contact Email :</b><a href="mailto:daiy0928@cs.msu.ru">daiy0928@cs.msu.ru</a></span>
           </div>
         </div>
         <div className="status-cluster" aria-label="verification status">

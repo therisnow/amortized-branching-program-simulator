@@ -56,7 +56,7 @@ export const SOURCE_COLORS = [
   "#E69F00",
   "#56B4E9",
   "#7A4EAB",
-  "#5B6472",
+  "#8B5A2B",
 ] as const;
 
 const countFunctions = (variables: number) => 1 << (1 << variables);

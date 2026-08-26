@@ -34,9 +34,9 @@
 
 ## 运行方式
 
-- **在线运行：**打开 [GitHub Pages 在线版](https://therisnow.github.io/amortized-branching-program-simulator/)。
-- **便携版：**从 [Releases](https://github.com/therisnow/potechin-bp-simulator/releases) 下载并解压 `PotechinSimulator-Portable.zip`，然后打开 `index.html`。
-- **从源代码运行：**安装 [Node.js](https://nodejs.org/) 22.13 或更高版本以及 pnpm，然后运行：
+- **在线运行：** 打开 [GitHub Pages 在线版](https://therisnow.github.io/amortized-branching-program-simulator/)。
+- **便携版：** 从 [Releases](https://github.com/therisnow/potechin-bp-simulator/releases) 下载并解压 `PotechinSimulator-Portable.zip`，然后打开 `index.html`。
+- **从源代码运行：** 安装 [Node.js](https://nodejs.org/) 22.13 或更高版本以及 pnpm，然后运行：
 
 ```bash
 pnpm install
@@ -48,8 +48,3 @@ pnpm dev
 - Aaron Potechin, [*A Note on Amortized Branching Program Complexity*](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2017.4) (2017).
 - Vincent Girard, Michal Koucký, and Pierre McKenzie, [*Nonuniform Catalytic Space and the Direct Sum for Space*](https://eccc.weizmann.ac.il/report/2015/138/) (2015).
 - James Cook and Ian Mertz, [*Trading Time and Space in Catalytic Branching Programs*](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2022.8) (2022).
-
-## 联系方式
-
-- 源代码：[therisnow/potechin-bp-simulator](https://github.com/therisnow/potechin-bp-simulator)
-- 邮箱：[daiy0928@cs.msu.ru](mailto:daiy0928@cs.msu.ru)

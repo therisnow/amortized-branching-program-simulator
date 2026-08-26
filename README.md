@@ -48,8 +48,3 @@ pnpm dev
 - Aaron Potechin, [*A Note on Amortized Branching Program Complexity*](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2017.4) (2017).
 - Vincent Girard, Michal Koucký, and Pierre McKenzie, [*Nonuniform Catalytic Space and the Direct Sum for Space*](https://eccc.weizmann.ac.il/report/2015/138/) (2015).
 - James Cook and Ian Mertz, [*Trading Time and Space in Catalytic Branching Programs*](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2022.8) (2022).
-
-## Contact
-
-- Source: [therisnow/potechin-bp-simulator](https://github.com/therisnow/potechin-bp-simulator)
-- Email: [daiy0928@cs.msu.ru](mailto:daiy0928@cs.msu.ru)

@@ -131,7 +131,19 @@ export default function Home() {
         </aside>
 
         <section className="graph-panel panel">
-          <div className="graph-toolbar"><div><strong>Complete static program</strong><span>Green/red nodes denote value 1/accept and 0/reject; gray is unreachable aux. Static edges: black = read 0, blue = read 1, teal = fixed interface. Colored overlays are active source paths. Click a vertex for details.</span></div></div>
+          <div className="graph-toolbar">
+            <strong>Complete static program</strong>
+            <div className="graph-legend" aria-label="Graph legend">
+              <span className="legend-item"><i className="legend-node accept" />1 / accept</span>
+              <span className="legend-item"><i className="legend-node reject" />0 / reject</span>
+              <span className="legend-item"><i className="legend-node aux" />unreachable aux</span>
+              <span className="legend-item"><i className="legend-line bit-zero" />read 0</span>
+              <span className="legend-item"><i className="legend-line bit-one" />read 1</span>
+              <span className="legend-item"><i className="legend-line interface" />fixed interface</span>
+              <span className="legend-item"><i className="legend-line active" />active source path</span>
+              <span className="legend-hint">Click a vertex for details.</span>
+            </div>
+          </div>
           <div className="graph-scroll"><svg viewBox={VIEWBOX} className="program-svg" role="img" aria-label="Complete n equals 2 branching program">
             <defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke" /></marker></defs>
             <g className="stage-labels"><text x="90" y="32">8 sources</text><text x="280" y="32">Part 1 · L1</text><text x="500" y="32">Part 1 · full</text><text x="720" y="32">middle / Part 2 · L2</text><text x="940" y="32">Part 2 · L1</text><text x="1160" y="32">temporary outputs</text><text x="1370" y="32">accept reverse</text><text x="1370" y="910">reject reverse</text><text x="2420" y="32">recovered indices</text></g>

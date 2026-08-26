@@ -1,13 +1,12 @@
 # Amortized Branching Program Simulator
 
-Interactive visualization of the reconstructed (n=2) construction from Aaron Potechin, [*A Note on Amortized Branching Program Complexity*](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2017.4) (2017)..
+Interactive visualization of the reconstructed (n=2) construction from Aaron Potechin, [*A Note on Amortized Branching Program Complexity*](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2017.4) (2017).
 
 The simulator displays eight independently configured source inputs, all Part 1 and Part 2 physical vertices, the target-function-dependent middle bijection, temporary outputs, complete accepting and rejecting reverse copies, animated colored paths, and live correctness checks.
 
 ## Related papers
 
 - Vincent Girard, Michal Koucký, and Pierre McKenzie, [*Nonuniform Catalytic Space and the Direct Sum for Space*](https://eccc.weizmann.ac.il/report/2015/138/) (2015).
-- Aaron Potechin, [*A Note on Amortized Branching Program Complexity*](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2017.4) (2017).
 - James Cook and Ian Mertz, [*Trading Time and Space in Catalytic Branching Programs*](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2022.8) (2022).
 
 ## Local use

@@ -4,8 +4,6 @@ Interactive visualization of the reconstructed (n=2) construction from *A Note o
 
 The simulator displays eight independently configured source inputs, all Part 1 and Part 2 physical vertices, the target-function-dependent middle bijection, temporary outputs, complete accepting and rejecting reverse copies, animated colored paths, and live correctness checks.
 
-Contact: [daiy0928@cs.msu.ru](mailto:daiy0928@cs.msu.ru)
-
 ## Related papers
 
 - Vincent Girard, Michal Koucký, and Pierre McKenzie, [*Nonuniform Catalytic Space and the Direct Sum for Space*](https://eccc.weizmann.ac.il/report/2015/138/) (2015).

@@ -2,7 +2,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-This is an interactive, beginner-friendly visualization of the construction in Aaron Potechin's paper [*A Note on Amortized Branching Program Complexity*](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2017.4) (2017).
+Designed for research and teaching, this interactive, beginner-friendly simulator visualizes the construction in Aaron Potechin's paper [*A Note on Amortized Branching Program Complexity*](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2017.4) (2017).
 
 **[Open the live simulator](https://therisnow.github.io/amortized-branching-program-simulator/)**
 
@@ -35,7 +35,7 @@ source identity -> shared forward routing -> compute f(x) -> reverse routing -> 
 ## Run the simulator
 
 - **Online:** open the [GitHub Pages version](https://therisnow.github.io/amortized-branching-program-simulator/).
-- **Portable:** download `PotechinSimulator-Portable.zip` from [Releases](https://github.com/therisnow/potechin-bp-simulator/releases), unzip it, and open `index.html`.
+- **Portable:** download `PotechinSimulator-Portable.zip` from [Release v1.0.0](https://github.com/therisnow/amortized-branching-program-simulator/releases/tag/v1.0.0), unzip it, and open `index.html`.
 - **From source:** install [Node.js](https://nodejs.org/) 22.13 or later and pnpm, then run:
 
 ```bash

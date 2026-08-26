@@ -2,7 +2,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-这是一个面向初学者的交互式模拟器，用来展示 Aaron Potechin 在论文 [*A Note on Amortized Branching Program Complexity*](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2017.4)（2017）中提出的构造。
+这是一个用于研究和教学、同时面向初学者的交互式模拟器，用来展示 Aaron Potechin 在论文 [*A Note on Amortized Branching Program Complexity*](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2017.4)（2017）中提出的构造。
 
 **[打开在线模拟器](https://therisnow.github.io/amortized-branching-program-simulator/)**
 
@@ -35,7 +35,7 @@
 ## 运行方式
 
 - **在线运行：** 打开 [GitHub Pages 在线版](https://therisnow.github.io/amortized-branching-program-simulator/)。
-- **便携版：** 从 [Releases](https://github.com/therisnow/potechin-bp-simulator/releases) 下载并解压 `PotechinSimulator-Portable.zip`，然后打开 `index.html`。
+- **便携版：** 从 [Release v1.0.0](https://github.com/therisnow/amortized-branching-program-simulator/releases/tag/v1.0.0) 下载并解压 `PotechinSimulator-Portable.zip`，然后打开 `index.html`。
 - **从源代码运行：** 安装 [Node.js](https://nodejs.org/) 22.13 或更高版本以及 pnpm，然后运行：
 
 ```bash

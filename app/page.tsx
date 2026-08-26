@@ -33,6 +33,11 @@ function nodeRadius(node: ProgramNode) {
   return node.terminal ? 11 : 10;
 }
 
+function nodeSemanticClass(node: ProgramNode) {
+  if (node.stage !== "p2" || node.level !== 0) return "";
+  return node.fn === 1 ? "terminal-accept" : "terminal-reject";
+}
+
 export default function Home() {
   const [fTable, setFTable] = useState("0001");
   const [inputs, setInputs] = useState(DEFAULT_INPUTS);
@@ -84,11 +89,10 @@ export default function Home() {
     <main className="simulator-shell">
       <header className="topbar">
         <div>
-          <p className="eyebrow">Potechin · n = 2 · exploratory mode</p>
-          <h1>Amortized Branching Program Simulator</h1>
+          <h1>Amortized Branching Program Simulator <span>(N=2)</span></h1>
           <div className="author-info">
             <span>Interactive visualization inspired by Aaron Potechin, <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2017.4" target="_blank" rel="noreferrer"><em>A Note on Amortized Branching Program Complexity</em> (2017)</a>.</span>
-            <span className="author-links"><a href="mailto:daiy0928@cs.msu.ru">Email</a><b>daiy0928@cs.msu.ru</b></span>
+            <span className="author-links"><a href="https://github.com/therisnow/potechin-bp-simulator" target="_blank" rel="noreferrer">GitHub Repository</a><i>·</i><a href="mailto:daiy0928@cs.msu.ru">Email</a><b>daiy0928@cs.msu.ru</b></span>
           </div>
         </div>
         <div className="status-cluster" aria-label="verification status">
@@ -133,7 +137,7 @@ export default function Home() {
             <g className="stage-labels"><text x="90" y="32">8 sources</text><text x="280" y="32">Part 1 · L1</text><text x="500" y="32">Part 1 · full</text><text x="720" y="32">middle / Part 2 · L2</text><text x="940" y="32">Part 2 · L1</text><text x="1160" y="32">temporary outputs</text><text x="1370" y="32">accept reverse</text><text x="1370" y="910">reject reverse</text><text x="2420" y="32">recovered indices</text></g>
             <g className={showAllEdges ? "static-edges" : "static-edges hidden-static"}>{program.edges.map((edge) => <path key={edge.id} d={edgePath(edge, program.nodeById)} className={`edge ${edge.kind}`} markerEnd="url(#arrow)" />)}</g>
             <g className="active-edges">{Array.from(traversedEdges.entries()).flatMap(([edgeId, sources]) => { const edge = program.edges.find((candidate) => candidate.id === edgeId)!; const midpoint = edgeMidpoint(edge, program.nodeById); return sources.map((source, index) => { const offset = (index - (sources.length - 1) / 2) * 18; const inputLabel = edge.bit !== undefined && edge.query !== undefined ? `x${edge.query + 1}=${edge.bit}` : null; return <g key={`${edgeId}-${source}`} transform={`translate(0 ${offset})`}><path d={edgePath(edge, program.nodeById)} stroke={SOURCE_COLORS[source]} className="active-edge" markerEnd="url(#arrow)" />{inputLabel && <g className="edge-input-label" transform={`translate(${midpoint.x} ${midpoint.y})`}><rect x="-21" y="-9" width="42" height="18" rx="5" fill={SOURCE_COLORS[source]} /><text y="3.5">{inputLabel}</text></g>}</g>; }); })}</g>
-            <g className="nodes">{program.nodes.map((node) => { const active = activeNodes.get(node.id) ?? []; return <g key={node.id} transform={`translate(${node.x} ${node.y})`} className={`node ${node.family} ${node.id === program.unusedMiddleTarget ? "unused" : ""}`} onClick={() => setSelectedNodeId(node.id)} tabIndex={0} role="button" aria-label={node.detail}><circle r={nodeRadius(node)} /><text y={nodeRadius(node) + 13}>{node.label}</text>{active.map((source, index) => { const angle = Math.PI * 2 * index / Math.max(active.length, 1); return <circle key={source} cx={Math.cos(angle) * 15} cy={Math.sin(angle) * 15} r="4.5" fill={SOURCE_COLORS[source]} className="path-marker" />; })}</g>; })}</g>
+            <g className="nodes">{program.nodes.map((node) => { const active = activeNodes.get(node.id) ?? []; return <g key={node.id} transform={`translate(${node.x} ${node.y})`} className={`node ${node.family} ${nodeSemanticClass(node)} ${node.id === program.unusedMiddleTarget ? "unused" : ""}`} onClick={() => setSelectedNodeId(node.id)} tabIndex={0} role="button" aria-label={node.detail}><circle r={nodeRadius(node)} /><text y={nodeRadius(node) + 13}>{node.label}</text>{active.map((source, index) => { const angle = Math.PI * 2 * index / Math.max(active.length, 1); return <circle key={source} cx={Math.cos(angle) * 15} cy={Math.sin(angle) * 15} r="4.5" fill={SOURCE_COLORS[source]} className="path-marker" />; })}</g>; })}</g>
           </svg></div>
         </section>
 

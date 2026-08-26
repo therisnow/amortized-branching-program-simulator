@@ -4,7 +4,7 @@
 
 This is an interactive, beginner-friendly visualization of the construction in Aaron Potechin's paper [*A Note on Amortized Branching Program Complexity*](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2017.4) (2017).
 
-**[Open the live simulator](https://therisnow.github.io/potechin-bp-simulator/)**
+**[Open the live simulator](https://therisnow.github.io/amortized-branching-program-simulator/)**
 
 ## What question does it illustrate?
 
@@ -73,7 +73,7 @@ You can hide or show static edges and active paths independently. The correctnes
 
 ### Online — easiest
 
-Open [the GitHub Pages version](https://therisnow.github.io/potechin-bp-simulator/). Nothing needs to be installed, and the simulator does not upload your choices.
+Open [the GitHub Pages version](https://therisnow.github.io/amortized-branching-program-simulator/). Nothing needs to be installed, and the simulator does not upload your choices.
 
 ### Portable offline version
 

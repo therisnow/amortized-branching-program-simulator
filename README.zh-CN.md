@@ -4,7 +4,7 @@
 
 这是一个面向初学者的交互式模拟器，用来展示 Aaron Potechin 在论文 [*A Note on Amortized Branching Program Complexity*](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2017.4)（2017）中提出的构造。
 
-**[打开在线模拟器](https://therisnow.github.io/potechin-bp-simulator/)**
+**[打开在线模拟器](https://therisnow.github.io/amortized-branching-program-simulator/)**
 
 ## 它想说明什么问题？
 
@@ -73,7 +73,7 @@ Part 2 再次读取输入，并求出真值表中的 `h(x)`。由于 `h(x) = f(x
 
 ### 在线运行——最简单
 
-直接打开 [GitHub Pages 在线版](https://therisnow.github.io/potechin-bp-simulator/)。不需要安装任何软件，模拟器也不会上传你的选择。
+直接打开 [GitHub Pages 在线版](https://therisnow.github.io/amortized-branching-program-simulator/)。不需要安装任何软件，模拟器也不会上传你的选择。
 
 ### 便携离线版
 

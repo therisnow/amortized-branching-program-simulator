@@ -25,11 +25,11 @@ button { color: inherit; }
 .topbar { display: flex; justify-content: space-between; gap: 32px; align-items: flex-end; margin: 0 auto 16px; max-width: 1900px; }
 h1 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(30px, 3vw, 46px); font-weight: 800; letter-spacing: -.035em; }
 h1 span { color: var(--blue); font-size: .68em; white-space: nowrap; }
-.author-info { display: grid; gap: 3px; max-width: 940px; margin-top: 8px; color: var(--muted); font-size: 14px; font-weight: 600; line-height: 1.4; }
-.author-info a { color: var(--blue); font-weight: 800; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.author-info { display: grid; gap: 4px; max-width: 1100px; margin-top: 8px; color: var(--muted); font-size: 14px; font-weight: 400; line-height: 1.4; }
+.author-info a { color: var(--blue); font-weight: inherit; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.paper-citation { white-space: nowrap; }
 .author-links { display: flex; flex-wrap: wrap; gap: 7px; align-items: baseline; }
 .author-links i { color: #9aa2aa; font-style: normal; }
-.author-links b { color: var(--muted); font-size: 13px; }
 
 .workspace { display: grid; grid-template-columns: 340px minmax(620px, 1fr) 340px; gap: 14px; max-width: 1900px; margin: auto; height: calc(100vh - 134px); min-height: 710px; }
 .panel { background: rgba(255, 253, 248, .94); border: 1px solid #d5d0c7; border-radius: 14px; box-shadow: 0 10px 35px rgba(34, 42, 50, .07); }

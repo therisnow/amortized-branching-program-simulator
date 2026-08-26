@@ -10,7 +10,7 @@
   --reject: #e63b2e;
   --reject-fill: #ffe4df;
   --font-ui: 'Segoe UI Variable Text', Aptos, 'Segoe UI', 'Noto Sans', 'Microsoft YaHei UI', sans-serif;
-  --font-display: 'Segoe UI Variable Display', 'Aptos Display', 'Segoe UI', 'Noto Sans', sans-serif;
+  --font-display: Georgia, Cambria, 'Times New Roman', serif;
   --font-mono: 'Cascadia Mono', Consolas, 'SFMono-Regular', 'Liberation Mono', monospace;
 }
 
@@ -26,7 +26,7 @@ button { color: inherit; }
   background: radial-gradient(circle at 12% 0%, #fff 0, transparent 28%), linear-gradient(135deg, #f5f2eb, #ece9e2);
 }
 .topbar { display: flex; justify-content: space-between; gap: 32px; align-items: flex-end; margin: 0 auto 16px; max-width: 1900px; }
-h1 { margin: 0; font-family: var(--font-display); font-size: clamp(30px, 3vw, 46px); font-weight: 780; letter-spacing: -.035em; }
+h1 { margin: 0; font-family: var(--font-display); font-size: clamp(30px, 3vw, 46px); font-weight: 800; letter-spacing: -.035em; }
 h1 span { color: var(--blue); font-size: .68em; white-space: nowrap; }
 .author-info { display: grid; gap: 4px; max-width: 1100px; margin-top: 8px; color: var(--muted); font-size: 14px; font-weight: 400; line-height: 1.4; }
 .author-info a { color: var(--blue); font-weight: inherit; text-decoration-thickness: 1px; text-underline-offset: 2px; }

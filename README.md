@@ -1,6 +1,6 @@
-# Potechin Branching Program Simulator
+# Amortized Branching Program Simulator
 
-Interactive visualization of the reconstructed (n=2) construction from *A Note on Amortized Branching Program Complexity*.
+Interactive visualization of the reconstructed (n=2) construction from Aaron Potechin, [*A Note on Amortized Branching Program Complexity*](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2017.4) (2017)..
 
 The simulator displays eight independently configured source inputs, all Part 1 and Part 2 physical vertices, the target-function-dependent middle bijection, temporary outputs, complete accepting and rejecting reverse copies, animated colored paths, and live correctness checks.
 

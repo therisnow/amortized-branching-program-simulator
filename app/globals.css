@@ -75,19 +75,16 @@ h1 span { color: var(--blue); font-size: .68em; white-space: nowrap; }
 .status.bad { background: #f8ded9; color: #8d2c20; }
 
 .graph-panel { min-width: 0; display: flex; flex-direction: column; overflow: hidden; }
-.graph-toolbar { display: flex; justify-content: space-between; gap: 20px; align-items: center; padding: 12px 15px; border-bottom: 1px solid var(--line); }
+.graph-toolbar { padding: 12px 15px; border-bottom: 1px solid var(--line); }
 .graph-toolbar strong { display: block; font: 800 17px Georgia, serif; }
-.graph-toolbar span { color: var(--muted); font-size: 12px; font-weight: 600; margin-left: 8px; }
-.graph-key { display: flex; align-items: center; white-space: nowrap; font-size: 11px; font-weight: 700; color: var(--muted); }
-.key-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin: 0 4px 0 10px; }
-.key-dot.forward { background: var(--blue); }
-.key-dot.accept { background: var(--accept); }
-.key-dot.reject { background: var(--reject); }
+.graph-toolbar span { display: block; max-width: 1050px; margin-top: 4px; color: var(--muted); font-size: 12px; font-weight: 650; line-height: 1.4; }
 .graph-scroll { flex: 1; overflow: auto; background-color: #fbfaf6; background-image: linear-gradient(#e9e6df 1px, transparent 1px), linear-gradient(90deg, #e9e6df 1px, transparent 1px); background-size: 28px 28px; }
 .program-svg { width: 2520px; height: 1740px; display: block; }
 .stage-labels text { font: 800 14px Georgia, serif; fill: #3f4a55; text-anchor: middle; }
 
-.edge { fill: none; stroke: #68737d; stroke-width: .9; opacity: .34; vector-effect: non-scaling-stroke; }
+.edge { fill: none; stroke: #68737d; stroke-width: .95; opacity: .42; vector-effect: non-scaling-stroke; }
+.edge.bit-0 { stroke: #22272d; }
+.edge.bit-1 { stroke: #1479bd; }
 .edge.middle, .edge.bridge { stroke: #116b65; stroke-width: 1.1; opacity: .58; }
 .edge.aux { stroke-dasharray: 4 4; }
 .hidden-static .edge { opacity: .04; }
@@ -99,10 +96,14 @@ h1 span { color: var(--blue); font-size: .68em; white-space: nowrap; }
 
 .node { cursor: pointer; outline: none; }
 .node > circle:first-child { fill: #fffdf8; stroke: var(--blue); stroke-width: 1.4; vector-effect: non-scaling-stroke; }
-.node.accept-reverse > circle:first-child, .node.terminal-accept > circle:first-child { fill: var(--accept-fill); stroke: var(--accept); stroke-width: 2.2; }
-.node.reject-reverse > circle:first-child, .node.terminal-reject > circle:first-child { fill: var(--reject-fill); stroke: var(--reject); stroke-width: 2.2; }
-.node.accept-reverse text, .node.terminal-accept text { fill: #086437; }
-.node.reject-reverse text, .node.terminal-reject text { fill: #9c251d; }
+.node.accept-reverse > circle:first-child { fill: var(--accept-fill); stroke: var(--accept); stroke-width: 2.2; }
+.node.reject-reverse > circle:first-child { fill: var(--reject-fill); stroke: var(--reject); stroke-width: 2.2; }
+.node.accept-reverse text { fill: #086437; }
+.node.reject-reverse text { fill: #9c251d; }
+.node.terminal-accept > circle:first-child { fill: var(--accept-fill); stroke: var(--accept); stroke-width: 2.5; }
+.node.terminal-reject > circle:first-child { fill: var(--reject-fill); stroke: var(--reject); stroke-width: 2.5; }
+.node.terminal-accept text { fill: #086437; }
+.node.terminal-reject text { fill: #9c251d; }
 .node.aux > circle:first-child { fill: #68727b; stroke: #68727b; }
 .node.unused > circle:first-child { stroke-dasharray: 3 2; fill: #eeeae3; }
 .node text { text-anchor: middle; font: 800 12px 'Courier New', monospace; fill: #202a33; pointer-events: none; }

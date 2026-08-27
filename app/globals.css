@@ -110,10 +110,10 @@ h1 span { color: var(--blue); font-size: .68em; white-space: nowrap; }
 
 .node { cursor: pointer; outline: none; }
 .node > circle:first-child { fill: #fffdf8; stroke: var(--blue); stroke-width: 1.4; vector-effect: non-scaling-stroke; }
-.node.accept-reverse > circle:first-child { fill: var(--accept-fill); stroke: var(--accept); stroke-width: 2.2; }
-.node.reject-reverse > circle:first-child { fill: var(--reject-fill); stroke: var(--reject); stroke-width: 2.2; }
-.node.accept-reverse text { fill: #086437; }
-.node.reject-reverse text { fill: #9c251d; }
+.node.accept-reverse.reverse-endpoint > circle:first-child { fill: var(--accept-fill); stroke: var(--accept); stroke-width: 2.2; }
+.node.reject-reverse.reverse-endpoint > circle:first-child { fill: var(--reject-fill); stroke: var(--reject); stroke-width: 2.2; }
+.node.accept-reverse.reverse-endpoint text { fill: #086437; }
+.node.reject-reverse.reverse-endpoint text { fill: #9c251d; }
 .node.terminal-accept > circle:first-child { fill: var(--accept-fill); stroke: var(--accept); stroke-width: 2.5; }
 .node.terminal-reject > circle:first-child { fill: var(--reject-fill); stroke: var(--reject); stroke-width: 2.5; }
 .node.terminal-accept text { fill: #086437; }

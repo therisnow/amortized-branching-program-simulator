@@ -35,6 +35,12 @@ function nodeRadius(node: ProgramNode) {
 
 function nodeSemanticClass(node: ProgramNode) {
   if (node.stage === "aux") return "terminal-aux";
+  if (node.family !== "forward") {
+    const isReverseEndpoint =
+      (node.stage === "p2" && node.level === 0) ||
+      (node.stage === "p1" && node.level === 0);
+    return isReverseEndpoint ? "reverse-endpoint" : "";
+  }
   if (node.stage !== "p2" || node.level !== 0) return "";
   return node.fn === 1 ? "terminal-accept" : "terminal-reject";
 }

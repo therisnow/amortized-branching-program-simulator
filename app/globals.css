@@ -72,7 +72,8 @@ h1 span { color: var(--blue); font-size: .68em; white-space: nowrap; }
 .paper-links span { display: block; color: var(--blue); font-size: 12px; font-weight: 800; }
 .paper-links b { display: block; margin-top: 2px; font-size: 13px; font-weight: 700; }
 
-.status-cluster { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+.status-cluster { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 6px; }
+.status-label { margin-right: 2px; color: var(--muted); font-size: 12px; font-weight: 800; }
 .status { padding: 6px 9px; border-radius: 999px; font-size: 11px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
 .status.ok { background: #dff3e8; color: #16633c; }
 .status.bad { background: #f8ded9; color: #8d2c20; }

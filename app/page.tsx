@@ -132,6 +132,7 @@ export default function Home() {
           </div>
         </div>
         <div className="status-cluster" aria-label="verification status">
+          <strong className="status-label">Live checks:</strong>
           <span className={verification.outputsCorrect ? "status ok" : "status bad"}>output</span><span className={verification.indicesRecovered ? "status ok" : "status bad"}>index</span><span className={verification.fixedBitInjective ? "status ok" : "status bad"}>injective</span><span className={verification.outdegreeValid ? "status ok" : "status bad"}>degree 2</span>
         </div>
       </header>

@@ -76,6 +76,35 @@ export default function Home() {
     return result;
   }, [verification.traces, step]);
 
+  const activeEdgeData = useMemo(() => Array.from(traversedEdges.entries()).map(([edgeId, sources]) => {
+    const edge = program.edges.find((candidate) => candidate.id === edgeId)!;
+    return { edge, sources, midpoint: edgeMidpoint(edge, program.nodeById) };
+  }), [program, traversedEdges]);
+
+  const edgeLabelOffsets = useMemo(() => {
+    const groups = new Map<string, string[]>();
+    activeEdgeData.forEach(({ edge, midpoint, sources }) => {
+      if (edge.bit === undefined || edge.query === undefined) return;
+      const positionKey = `${Math.round(midpoint.x)}:${Math.round(midpoint.y)}`;
+      sources.forEach((source) => groups.set(positionKey, [...(groups.get(positionKey) ?? []), `${edge.id}-${source}`]));
+    });
+
+    const offsets = new Map<string, { x: number; y: number }>();
+    groups.forEach((labels) => {
+      const columns = labels.length > 4 ? 2 : 1;
+      const rows = Math.ceil(labels.length / columns);
+      labels.forEach((label, index) => {
+        const column = columns === 1 ? 0 : index % 2;
+        const row = columns === 1 ? index : Math.floor(index / 2);
+        offsets.set(label, {
+          x: columns === 1 ? 0 : (column - 0.5) * 50,
+          y: (row - (rows - 1) / 2) * 23,
+        });
+      });
+    });
+    return offsets;
+  }, [activeEdgeData]);
+
   const selectedNode = selectedNodeId ? program.nodeById.get(selectedNodeId) : undefined;
   const toggleF = (index: number) => {
     setFTable((current) => current.split("").map((bit, i) => i === index ? (bit === "0" ? "1" : "0") : bit).join(""));
@@ -149,7 +178,7 @@ export default function Home() {
             <defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke" /></marker></defs>
             <g className="stage-labels"><text x="90" y="32">8 sources</text><text x="280" y="32">Part 1 · L1</text><text x="500" y="32">Part 1 · full</text><text x="720" y="32">middle / Part 2 · L2</text><text x="940" y="32">Part 2 · L1</text><text x="1160" y="32">temporary outputs</text><text x="1370" y="32">accept reverse</text><text x="1370" y="910">reject reverse</text><text x="2420" y="32">recovered indices</text></g>
             <g className={showAllEdges ? "static-edges" : "static-edges hidden-static"}>{program.edges.map((edge) => <path key={edge.id} d={edgePath(edge, program.nodeById)} className={`edge ${edge.kind} ${edge.bit === undefined ? "" : `bit-${edge.bit}`}`} markerEnd="url(#arrow)" />)}</g>
-            <g className="active-edges">{Array.from(traversedEdges.entries()).flatMap(([edgeId, sources]) => { const edge = program.edges.find((candidate) => candidate.id === edgeId)!; const midpoint = edgeMidpoint(edge, program.nodeById); return sources.map((source, index) => { const offset = (index - (sources.length - 1) / 2) * 18; const inputLabel = edge.bit !== undefined && edge.query !== undefined ? `x${edge.query + 1}=${edge.bit}` : null; return <g key={`${edgeId}-${source}`} transform={`translate(0 ${offset})`}><path d={edgePath(edge, program.nodeById)} stroke={SOURCE_COLORS[source]} className="active-edge" markerEnd="url(#arrow)" />{inputLabel && <g className="edge-input-label" transform={`translate(${midpoint.x} ${midpoint.y})`}><rect x="-21" y="-9" width="42" height="18" rx="5" fill={SOURCE_COLORS[source]} /><text y="3.5">{inputLabel}</text></g>}</g>; }); })}</g>
+            <g className="active-edges">{activeEdgeData.flatMap(({ edge, sources, midpoint }) => sources.map((source, index) => { const edgeOffset = (index - (sources.length - 1) / 2) * 18; const inputLabel = edge.bit !== undefined && edge.query !== undefined ? `x${edge.query + 1}=${edge.bit}` : null; const labelOffset = edgeLabelOffsets.get(`${edge.id}-${source}`) ?? { x: 0, y: 0 }; return <g key={`${edge.id}-${source}`}><path d={edgePath(edge, program.nodeById)} transform={`translate(0 ${edgeOffset})`} stroke={SOURCE_COLORS[source]} className="active-edge" markerEnd="url(#arrow)" />{inputLabel && <g className="edge-input-label" transform={`translate(${midpoint.x + labelOffset.x} ${midpoint.y + labelOffset.y})`}><rect x="-21" y="-9" width="42" height="18" rx="5" fill={SOURCE_COLORS[source]} /><text y="3.5">{inputLabel}</text></g>}</g>; }))}</g>
             <g className="nodes">{program.nodes.map((node) => { const active = activeNodes.get(node.id) ?? []; return <g key={node.id} transform={`translate(${node.x} ${node.y})`} className={`node ${node.family} ${nodeSemanticClass(node)} ${node.id === program.unusedMiddleTarget ? "unused" : ""}`} onClick={() => setSelectedNodeId(node.id)} tabIndex={0} role="button" aria-label={node.detail}><circle r={nodeRadius(node)} /><text y={nodeRadius(node) + 13}>{node.label}</text>{active.map((source, index) => { const angle = Math.PI * 2 * index / Math.max(active.length, 1); return <circle key={source} cx={Math.cos(angle) * 15} cy={Math.sin(angle) * 15} r="4.5" fill={SOURCE_COLORS[source]} className="path-marker" />; })}</g>; })}</g>
           </svg></div>
         </section>

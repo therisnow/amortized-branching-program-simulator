@@ -128,7 +128,7 @@ export default function Home() {
           <h1>Amortized Branching Program Simulator <span>(N=2)</span></h1>
           <div className="author-info">
             <span>Interactive visualization of Potechin’s construction for amortized branching programs, <span className="paper-citation">following <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CCC.2017.4" target="_blank" rel="noreferrer"><em>A Note on Amortized Branching Program Complexity</em> (2017)</a>.</span></span>
-            <span className="author-links"><span>Source :</span><a href="https://github.com/therisnow/potechin-bp-simulator" target="_blank" rel="noreferrer">GitHub Repository</a><i>·</i><span>Contact Email :</span><a href="mailto:daiy0928@cs.msu.ru">daiy0928@cs.msu.ru</a></span>
+            <span className="author-links"><span>Source :</span><a href="https://github.com/therisnow/amortized-branching-program-simulator/tree/main/PotechinSimulator" target="_blank" rel="noreferrer">GitHub Repository</a><i>·</i><a href="https://therisnow.github.io/amortized-branching-program-simulator/cook-mertz/">Explore the Cook–Mertz simulator →</a><i>·</i><span>Contact Email :</span><a href="mailto:daiy0928@cs.msu.ru">daiy0928@cs.msu.ru</a></span>
           </div>
         </div>
         <div className="status-cluster" aria-label="verification status">

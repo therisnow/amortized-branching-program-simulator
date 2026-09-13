@@ -1,4 +1,4 @@
-name: Deploy simulator to GitHub Pages
+name: Deploy both simulators to GitHub Pages
 
 on:
   push:
@@ -29,13 +29,29 @@ jobs:
         with:
           node-version: 24
           cache: pnpm
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm run check
-      - run: pnpm run build:portable
+          cache-dependency-path: PotechinSimulator/pnpm-lock.yaml
+      - name: Install Potechin dependencies
+        run: pnpm install --frozen-lockfile
+        working-directory: PotechinSimulator
+      - name: Check and build Potechin simulator
+        run: pnpm run check && pnpm run build:portable
+        working-directory: PotechinSimulator
+      - name: Install Cook–Mertz dependencies
+        run: npm ci
+        working-directory: CookMertzSimulator
+      - name: Check and build Cook–Mertz simulator
+        run: npm run check && npm run verify:simulator && npm run build:portable
+        working-directory: CookMertzSimulator
+      - name: Assemble both pages
+        run: |
+          mkdir -p site/cook-mertz
+          cp PotechinSimulator/portable/index.html site/index.html
+          cp CookMertzSimulator/portable/index.html site/cook-mertz/index.html
+          touch site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: portable
+          path: site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

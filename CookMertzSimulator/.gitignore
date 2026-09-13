@@ -19,7 +19,6 @@
 # misc
 .DS_Store
 *.pem
-*.tsbuildinfo
 
 # debug
 npm-debug.log*
@@ -35,18 +34,8 @@ yarn-error.log*
 next-env.d.ts
 /dist/
 /portable/
-/*.zip
+/*-Portable.zip
 /.wrangler/
 /outputs/
 /work/
-
-# Independent simulator projects
-**/node_modules/
-**/.next/
-**/.vinext/
-**/dist/
-**/portable/
-**/.wrangler/
-**/*.tsbuildinfo
-**/next-env.d.ts
-**/*.zip
+*.tsbuildinfo
